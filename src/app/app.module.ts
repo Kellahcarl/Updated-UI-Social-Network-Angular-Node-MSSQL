@@ -11,6 +11,11 @@ import { ResetComponent } from './auth/reset/reset.component';
 import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 import { FriendsComponent } from './friends/friends.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PhotosComponent } from './photos/photos.component';
+import { PersonalInfoComponent } from './settings/personal-info/personal-info.component';
+import { ChangePasswordComponent } from './settings/change-password/change-password.component';
+import { AettingsComponent } from './settings/aettings/aettings.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { AboutComponent } from './about/about.component';
     ResetComponent,
     NewsfeedComponent,
     FriendsComponent,
-    AboutComponent
+    AboutComponent,
+    ProfileComponent,
+    PhotosComponent,
+    PersonalInfoComponent,
+    ChangePasswordComponent,
+    AettingsComponent
   ],
   imports: [
     BrowserModule,

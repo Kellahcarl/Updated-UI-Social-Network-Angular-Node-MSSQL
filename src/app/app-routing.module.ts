@@ -7,6 +7,9 @@ import { ForgotComponent } from './auth/forgot/forgot.component';
 import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 import { FriendsComponent } from './friends/friends.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PhotosComponent } from './photos/photos.component';
+import { AettingsComponent } from './settings/aettings/aettings.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -18,7 +21,10 @@ const routes: Routes = [
   { path: 'forgot', component: ForgotComponent },
   { path: 'newsfeed', component: NewsfeedComponent },
   { path: 'friends', component: FriendsComponent },
-  {path: 'about',component: AboutComponent}
+  { path: 'about', component: AboutComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'photos', component: PhotosComponent },
+  {path: 'settings', component:AettingsComponent}
 ];
 
 @NgModule({
