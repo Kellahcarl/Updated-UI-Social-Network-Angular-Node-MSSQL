@@ -1,28 +1,71 @@
- <div class="navbar">
-        <div class="navbar_menuicon" id="navicon">
-            <i class="fa fa-navicon"></i>
-        </div>
-        <div class="navbar_logo">
-            <img src="../../assets/images/logo.png" alt="" />
-        </div>
-        <div class="navbar_page">
-            <span>> NEWSFEED</span>
-        </div>
-        <div class="navbar_search">
-            <form method="" action="/">
-                <input type="text" placeholder="Search people.." />
-                <button><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        <div class="navbar_icons">
-            <ul>
-                <li id="friendsmodal"><i class="fa fa-user-o"></i><span id="notification">5</span></li>
-                <li id="messagesmodal"><i class="fa fa-comments-o"></i><span id="notification">2</span></li>
-                <a href="" style="color:white"><li><i class="fa fa-globe"></i></li></a>
-            </ul>
-        </div>
-        <div class="navbar_user" id="profilemodal" style="cursor:pointer">
-            <img src="../../assets/images/user.jpg" alt="" />
-            <span id="navbar_user_top">Jonh Hamstrong<br><p>User</p></span><i class="fa fa-angle-down"></i>
-        </div>
+<!-- navbar.component.html -->
+
+<nav class="navbar sticky-top">
+  <div class="navbar_menuicon" id="navicon" (click)="toggleMobileMenu()">
+    <i class="fa fa-navicon"></i>
+  </div>
+  <div class="navbar_logo">
+    <img src="../../assets/images/logo.png" alt="" />
+  </div>
+  <div class="navbar_page">
+    <span>> NEWSFEED</span>
+  </div>
+  <div class="navbar_search">
+    <form method="" action="/">
+      <input type="text" placeholder="Search people.." />
+      <button><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <div class="navbar_icons">
+    <ul>
+      <li id="friendsmodal" (mouseenter)="toggleFriendsModal()" (mouseleave)="toggleFriendsModal()">
+        <i class="fa fa-user-o"></i><span id="notification">5</span>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar_user" id="profilemodal" style="cursor: pointer" (mouseenter)="toggleProfileModal()" (mouseleave)="toggleProfileModal()">
+    <img src="../../assets/images/user.jpg" alt="" />
+    <span id="navbar_user_top">Jonh Hamstrong<br /><p>User</p></span>
+    <i class="fa fa-angle-down"></i>
+  </div>
+</nav>
+
+<!-- Friends Modal -->
+<div class="modal modal-friends" *ngIf="showFriendsModal" (mouseenter)="toggleFriendsModal()" (mouseleave)="toggleFriendsModal()">
+  <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+  <div class="modal-title">
+    <span>FRIEND REQUESTS</span>
+    <a href="friends.html"><i class="fa fa-ellipsis-h"></i></a>
+  </div>
+  <div class="modal-content">
+    <ul>
+      <!-- Add your friends list items here -->
+    </ul>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobilemenu" *ngIf="showMobileMenu">
+  <div class="mobilemenu_profile">
+    <img id="mobilemenu_portada" src="images/portada.jpg" />
+    <div class="mobilemenu_profile">
+      <img id="mobilemenu_profile_pic" src="images/user.jpg" /><br>
+      <span>Jonh Hamstrong<br><p>150k followers / 50 follow</p></span>
     </div>
+    <div class="mobilemenu_menu">
+      <ul>
+        <li><a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a></li>
+        <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
+        <li><a href="friends.html"><i class="fa fa-users"></i>Friends</a></li>
+        <li><a href="messages.html"><i class="fa fa-comments-o"></i>messages</a></li>
+      </ul>
+      <hr>
+      <ul>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
