@@ -1,14 +1,22 @@
 <!-- navbar.component.html -->
 
-<nav class="navbar sticky-top">
-  <div class="navbar_menuicon" id="navicon" (click)="toggleMobileMenu()">
+<div class="navbar">
+  <div class="navbar_menuicon" id="navicon">
     <i class="fa fa-navicon"></i>
   </div>
-  <div class="navbar_logo">
-    <img src="../../assets/images/logo.png" alt="" />
+  <div
+    class="navbar_logo"
+    style="display: flex; justify-content: center; align-items: center"
+  >
+    <img
+      src="https://www.shutterstock.com/image-vector/lets-talk-sign-banner-business-260nw-1942604878.jpg"
+      class="logo rounded"
+      style="height: 2rem"
+      alt=""
+    />
   </div>
   <div class="navbar_page">
-    <span>> NEWSFEED</span>
+    <span>> FEED</span>
   </div>
   <div class="navbar_search">
     <form method="" action="/">
@@ -18,52 +26,164 @@
   </div>
   <div class="navbar_icons">
     <ul>
-      <li id="friendsmodal" (mouseenter)="toggleFriendsModal()" (mouseleave)="toggleFriendsModal()">
+      <li id="friendsmodal">
         <i class="fa fa-user-o"></i><span id="notification">5</span>
+      </li>
+      <li id="messagesmodal">
+        <i class="fa fa-comments-o"></i><span id="notification">2</span>
       </li>
     </ul>
   </div>
-  <div class="navbar_user" id="profilemodal" style="cursor: pointer" (mouseenter)="toggleProfileModal()" (mouseleave)="toggleProfileModal()">
+  <div class="navbar_user" id="profilemodal" style="cursor: pointer">
     <img src="../../assets/images/user.jpg" alt="" />
-    <span id="navbar_user_top">Jonh Hamstrong<br /><p>User</p></span>
-    <i class="fa fa-angle-down"></i>
+    <span id="navbar_user_top"
+      >Jonh Hamstrong<br />
+      <p>User</p></span
+    ><i class="fa fa-angle-down"></i>
   </div>
-</nav>
+</div>
 
 <!-- Friends Modal -->
-<div class="modal modal-friends" *ngIf="showFriendsModal" (mouseenter)="toggleFriendsModal()" (mouseleave)="toggleFriendsModal()">
-  <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+<!-- Modal Messages -->
+<div class="modal modal-comments">
+  <div class="modal-icon-select">
+    <i class="fa fa-sort-asc" aria-hidden="true"></i>
+  </div>
+  <div class="modal-title">
+    <span>CHAT / MESSAGES</span>
+    <a href="messages.html"><i class="fa fa-ellipsis-h"></i></a>
+  </div>
+  <div class="modal-content">
+    <ul>
+      <li>
+        <a href="#">
+          <img src="../../assets/images/user-7.jpg" alt="" />
+          <span
+            ><b>Diana Jameson</b><br />Hi James! It’s Diana, I just wanted to
+            let you know that we have to reschedule...
+            <p>4 hours ago</p></span
+          >
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="../../assets/images/user-6.jpg" alt="" />
+          <span
+            ><b>Elaine Dreyfuss</b><br />We’ll have to check that at the office
+            and see if the client is on board with...
+            <p>Yesterday at 9:56pm</p></span
+          >
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="../../assets/images/user-3.jpg" alt="" />
+          <span
+            ><b>Jake Parker</b><br />Great, I’ll see you tomorrow!.
+            <p>4 hours ago</p></span
+          >
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Modal Friends -->
+<div class="modal modal-friends">
+  <div class="modal-icon-select">
+    <i class="fa fa-sort-asc" aria-hidden="true"></i>
+  </div>
   <div class="modal-title">
     <span>FRIEND REQUESTS</span>
     <a href="friends.html"><i class="fa fa-ellipsis-h"></i></a>
   </div>
   <div class="modal-content">
     <ul>
-      <!-- Add your friends list items here -->
+      <li>
+        <a routerLink="/profile">
+          <img src="../../assets/images/user-2.jpg" alt="" />
+          <span><b>Tony Stevens</b><br />4 Friends in Common</span>
+          <button class="modal-content-accept">Accept</button
+          ><button class="modal-content-decline">Decline</button>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/profile">
+          <img src="../../assets/images/user-6.jpg" alt="" />
+          <span><b>Tamara Romanoff</b><br />2 Friends in Common</span>
+          <button class="modal-content-accept">Accept</button
+          ><button class="modal-content-decline">Decline</button>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/profile">
+          <img src="../../assets/images/user-4.jpg" alt="" />
+          <span><b>Nicholas Grissom</b><br />1 Friend in Common</span>
+          <button class="modal-content-accept">Accept</button
+          ><button class="modal-content-decline">Decline</button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Modal Profile -->
+<div class="modal modal-profile">
+  <div class="modal-icon-select">
+    <i class="fa fa-sort-asc" aria-hidden="true"></i>
+  </div>
+  <div class="modal-title">
+    <span>YOUR ACCOUNT</span>
+    <a routerLink="/settings"><i class="fa fa-cogs"></i></a>
+  </div>
+  <div class="modal-content">
+    <ul>
+      <li>
+        <a routerLink="/settings">
+          <i class="fa fa-tasks" aria-hidden="true"></i>
+          <span><b>Profile Settings</b><br />Yours profile settings</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="login.html">
+          <i class="fa fa-power-off" aria-hidden="true"></i>
+          <span><b>Log Out</b><br />Close your session</span>
+        </a>
+      </li>
     </ul>
   </div>
 </div>
 
-<!-- Mobile Menu -->
-<div class="mobilemenu" *ngIf="showMobileMenu">
+<!-- NavMobile -->
+<div class="mobilemenu">
   <div class="mobilemenu_profile">
-    <img id="mobilemenu_portada" src="images/portada.jpg" />
+    <img id="mobilemenu_portada" src="../../assets/images/portada.jpg" />
     <div class="mobilemenu_profile">
-      <img id="mobilemenu_profile_pic" src="images/user.jpg" /><br>
-      <span>Jonh Hamstrong<br><p>150k followers / 50 follow</p></span>
+      <img
+        id="mobilemenu_profile_pic"
+        src="../../assets/images/user.jpg"
+      /><br />
+      <span
+        >Jonh Hamstrong<br />
+        <p>150k followers / 50 follow</p></span
+      >
     </div>
     <div class="mobilemenu_menu">
       <ul>
-        <li><a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a></li>
-        <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
-        <li><a href="friends.html"><i class="fa fa-users"></i>Friends</a></li>
-        <li><a href="messages.html"><i class="fa fa-comments-o"></i>messages</a></li>
+        <li>
+          <a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a>
+        </li>
+        <li>
+          <a href="profile.html"><i class="fa fa-user"></i>Profile</a>
+        </li>
+        <li>
+          <a href="friends.html"><i class="fa fa-users"></i>Friends</a>
+        </li>
+        <li>
+          <a href="messages.html"><i class="fa fa-comments-o"></i>messages</a>
+        </li>
       </ul>
-      <hr>
+      <hr />
       <ul>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">FAQ's</a></li>
-        <li><a href="#">Contact</a></li>
         <li><a href="login.html">Logout</a></li>
       </ul>
     </div>
