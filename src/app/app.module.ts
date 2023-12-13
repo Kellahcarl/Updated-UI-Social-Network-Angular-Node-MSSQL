@@ -16,6 +16,9 @@ import { PhotosComponent } from './photos/photos.component';
 import { PersonalInfoComponent } from './settings/personal-info/personal-info.component';
 import { ChangePasswordComponent } from './settings/change-password/change-password.component';
 import { AettingsComponent } from './settings/aettings/aettings.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,13 +35,17 @@ import { AettingsComponent } from './settings/aettings/aettings.component';
     PhotosComponent,
     PersonalInfoComponent,
     ChangePasswordComponent,
-    AettingsComponent
+    AettingsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxDropzoneModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
