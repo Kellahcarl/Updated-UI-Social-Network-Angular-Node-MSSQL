@@ -25,7 +25,6 @@
       </ul>
     </div>
   </div>
-  
 
   <div class="right_row">
     <div class="row">
@@ -37,18 +36,72 @@
         </div>
         <form method="" action="/">
           <div class="publish_textarea">
-            <img class="border-radius-image" src="../../assets/images/user.jpg" alt="" />
-            <textarea
-              type="text"
-              placeholder="¿Whats up, Jonh?"
-              style="resize: none"
-            ></textarea>
+            <img
+              class="border-radius-image"
+              src="../../assets/images/user.jpg"
+              alt=""
+            />
+            <div style="display: flex; flex-direction: column">
+              <textarea
+                type="text"
+                placeholder="Whats up, John?"
+                style="resize: none"
+              ></textarea>
+              <div
+                *ngIf="
+                  selectedPostType === 'image' || selectedPostType === 'video'
+                "
+              >
+                <div
+                  class="dropzone"
+                  ngbDrop
+                  (fileDrop)="onFileDropped($event)"
+                  [class.image-dropzone]="selectedPostType === 'image'"
+                  [class.video-dropzone]="selectedPostType === 'video'"
+                >
+                  {{
+                    selectedPostType === "image"
+                      ? "Drop image here or click to select"
+                      : "Drop video here or click to select"
+                  }}
+                </div>
+                <input
+                  type="file"
+                  *ngIf="
+                    selectedPostType === 'image' || selectedPostType === 'video'
+                  "
+                  class="form-control-file"
+                  id="exampleFormControlFile1"
+                  (change)="onFileSelected($event)"
+                />
+                <div *ngIf="selectedFile">
+                  <img
+                    *ngIf="selectedPostType === 'image'"
+                    [src]="selectedFile | async"
+                    alt="Selected Image"
+                    class="img-fluid mt-3"
+                  />
+                  <video
+                    *ngIf="selectedPostType === 'video'"
+                    [src]="selectedFile | async"
+                    controls
+                    class="mt-3 video-preview"
+                  ></video>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="publish_icons">
             <ul>
-              <li><i class="fa fa-camera"></i></li>
-              <li><i class="fa fa-video-camera"></i></li>
-              <li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
+              <li (click)="selectedPostType = 'text'">
+                <i class="fa fa-pencil pe-2"></i>
+              </li>
+              <li (click)="selectedPostType = 'image'">
+                <i class="fa fa-camera"></i>
+              </li>
+              <li (click)="selectedPostType = 'video'">
+                <i class="fa fa-video-camera"></i>
+              </li>
             </ul>
             <button>Publish</button>
           </div>
