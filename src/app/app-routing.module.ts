@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PhotosComponent } from './photos/photos.component';
 import { AettingsComponent } from './settings/aettings/aettings.component';
+import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'photos', component: PhotosComponent },
-  {path: 'settings', component:AettingsComponent}
+  { path: 'settings', component: AettingsComponent },
+  {path: '', component: LandingComponent}
 ];
 
 @NgModule({

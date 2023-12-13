@@ -19,6 +19,7 @@ import { AettingsComponent } from './settings/aettings/aettings.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     PersonalInfoComponent,
     ChangePasswordComponent,
     AettingsComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
