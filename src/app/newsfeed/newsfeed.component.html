@@ -53,13 +53,19 @@
                   selectedPostType === 'image' || selectedPostType === 'video'
                 "
               >
-            <ngx-dropzone (change)="onSelectPostImage($event)">
-                            <ngx-dropzone-label>Drop Post Image</ngx-dropzone-label>
-                            <ngx-dropzone-preview *ngFor="let f of postFiles" [removable]="true" (removed)="onRemovePostImage(f)">
-                              <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                            </ngx-dropzone-preview>
-                          </ngx-dropzone>
-          
+                <ngx-dropzone (change)="onSelectPostImage($event)">
+                  <ngx-dropzone-label>Drop Post Image</ngx-dropzone-label>
+                  <ngx-dropzone-preview
+                    *ngFor="let f of postFiles"
+                    [removable]="true"
+                    (removed)="onRemovePostImage(f)"
+                  >
+                    <ngx-dropzone-label
+                      >{{ f.name }} ({{ f.type }})</ngx-dropzone-label
+                    >
+                  </ngx-dropzone-preview>
+                </ngx-dropzone>
+
                 <!-- <div *ngIf="selectedFile">
                   <img
                     *ngIf="selectedPostType === 'image'"
