@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="all">
   <div class="rowfixed"></div>
   <div class="left_row">
@@ -14,17 +15,16 @@
     <div class="rowmenu">
       <ul>
         <li>
-          <a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a>
+          <a routerLink="/newsfeed"><i class="fa fa-globe"></i>Newsfeed</a>
         </li>
         <li>
-          <a href="profile.html" id="rowmenu-selected"
+          <a routerLink="/profile" id="rowmenu-selected"
             ><i class="fa fa-user"></i>Profile</a
           >
         </li>
         <li>
-          <a href="friends.html"><i class="fa fa-users"></i>Friends</a>
+          <a routerLink="friends"><i class="fa fa-users"></i>Friends</a>
         </li>
-        
       </ul>
     </div>
   </div>
@@ -34,9 +34,9 @@
       <div class="feed">
         <div class="feed_title">
           <span
-            ><a href="profile.html"><b>Profile</b></a> |
-            <a href="about.html"><b>About</b></a> |
-            <a href="photos.html" id="select_profile_menu"
+            ><a routerLink="/profile"><b>Profile</b></a> |
+            <a routerLink="/about"><b>About</b></a> |
+            <a routerLink="photos" id="select_profile_menu"
               ><b>Photos</b></a
             ></span
           >

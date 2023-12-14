@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="all">
   <div class="rowfixed"></div>
   <div class="left_row">
@@ -14,17 +15,16 @@
     <div class="rowmenu">
       <ul>
         <li>
-          <a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a>
+          <a routerLink="/newsfeed"><i class="fa fa-globe"></i>Newsfeed</a>
         </li>
         <li>
-          <a href="profile.html" id="rowmenu-selected"
+          <a routerLink="/profile" id="rowmenu-selected"
             ><i class="fa fa-user"></i>Profile</a
           >
         </li>
         <li>
-          <a href="friends.html"><i class="fa fa-users"></i>Friends</a>
+          <a routerLink="/friends"><i class="fa fa-users"></i>Friends</a>
         </li>
-        
       </ul>
     </div>
   </div>
@@ -34,9 +34,11 @@
       <div class="feed">
         <div class="feed_title">
           <span
-            ><a href="profile.html" id="select_profile_menu"><b>Profile</b></a>
-            | <a href="about.html"><b>About</b></a> |
-            <a href="photos.html"><b>Photos</b></a></span
+            ><a routerLink="/profile" id="select_profile_menu"
+              ><b>Profile</b></a
+            >
+            | <a routerLink="/about"><b>About</b></a> |
+            <a routerLink="/photos"><b>Photos</b></a></span
           >
         </div>
       </div>
@@ -51,7 +53,11 @@
         </div>
         <form method="" action="/">
           <div class="publish_textarea">
-            <img class="border-radius-image" src="../../assets/images/user.jpg" alt="" />
+            <img
+              class="border-radius-image"
+              src="../../assets/images/user.jpg"
+              alt=""
+            />
             <textarea
               type="text"
               placeholder="¿Whats up, Jonh?"
@@ -75,13 +81,16 @@
         <div class="feed_title">
           <img src="../../assets/images/user.jpg" alt="" />
           <span
-            ><b>Jonh Hamstrong</b> shared a <a href="feed.html">photo</a><br />
+            ><b>Jonh Hamstrong</b> shared a <a routerLink="/newsfeed">photo</a
+            ><br />
             <p>March 2 at 6:05pm</p></span
           >
         </div>
         <div class="feed_content">
           <div class="feed_content_image">
-            <a href="feed.html"><img src="../../assets/images/user.jpg" alt="" /></a>
+            <a routerLink="/newsfeed"
+              ><img src="../../assets/images/user.jpg" alt=""
+            /></a>
           </div>
         </div>
         <div class="feed_footer">
@@ -97,7 +106,7 @@
             <li class="hover-orange selected-orange">
               <i class="fa fa-share"></i> 7k
             </li>
-            <a href="feed.html" style="color: #515365"
+            <a routerLink="/newsfeed" style="color: #515365"
               ><li class="hover-orange">
                 <i class="fa fa-comments-o"></i> 74 comments
               </li></a
@@ -112,7 +121,8 @@
         <div class="feed_title">
           <img src="../../assets/images/user.jpg" alt="" />
           <span
-            ><b>Jonh Hamstrong</b> shared a <a href="feed.html">video</a><br />
+            ><b>Jonh Hamstrong</b> shared a <a routerLink="/newsfeed">video</a
+            ><br />
             <p>March 1 at 3:53pm</p></span
           >
         </div>
@@ -139,7 +149,7 @@
             <li class="hover-orange selected-orange">
               <i class="fa fa-share"></i> 177
             </li>
-            <a href="feed.html" style="color: #515365"
+            <a routerLink="/newsfeed" style="color: #515365"
               ><li class="hover-orange">
                 <i class="fa fa-comments-o"></i> 12 comments
               </li></a
@@ -183,7 +193,7 @@
             <li class="hover-orange selected-orange">
               <i class="fa fa-share"></i> 7k
             </li>
-            <a href="feed.html" style="color: #515365"
+            <a routerLink="/newsfeed" style="color: #515365"
               ><li class="hover-orange">
                 <i class="fa fa-comments-o"></i> 14 comments
               </li></a
