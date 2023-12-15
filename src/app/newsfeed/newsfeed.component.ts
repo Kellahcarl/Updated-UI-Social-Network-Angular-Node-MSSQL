@@ -47,9 +47,9 @@ export class NewsfeedComponent {
       const imageUrls: string[] = [];
 
       // Upload all images
-      for (let index = 0; index < this.postFiles.length; index++) {
+   
         const data = new FormData();
-        const file_data = this.postFiles[index];
+        const file_data = this.postFiles[0];
         data.append('file', file_data);
         data.append('upload_preset', 'xznu6cwm');
         data.append('cloud_name', 'drkjise3u');
@@ -83,7 +83,7 @@ export class NewsfeedComponent {
             );
           }
         });
-      }
+      
     }
   }
 }
